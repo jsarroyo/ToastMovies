@@ -19,4 +19,16 @@
     <string name="txt_movie_url_imagen">Url Poster</string>
     <string name="txt_main_description">Descripcion</string>
     <string name="txt_add_moovie_text_button">Agregar</string>
+    <string name="first_fragment_label">first_fragment_label</string>
+    <string name="second_fragment_label">second_fragment_label</string>
+    <string name="add_movie">Agregar Peli</string>
+    <string name="delete_movie">Borrar Peli</string>
+    <string name="imagenposter">imagenPoster</string>
+    <string name="imagenposterbg">imagenposter-bg</string>
+    <string name="borrar_peli">Borrar Peli</string>
+    <string name="msgEmptyFields">Algunos campos no se han completado, verifique por favor!</string>
+    <string name="msgMovieSaved">La Pelicula ha sido registrada exitosamente</string>
+    <string name="msgDefaultMovieSaved">Peliculas por defecto se han registrado satisfactoriamente</string>
+    <string name="msgMovieDeleted">La Pelicula ha sido eliminada exitosamente</string>
+
 </resources>

@@ -11,4 +11,4 @@
     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
     app:spanCount="2"
     tools:context=".MainActivity"
-    tools:listitem="@layout/serie_list_content" />
+    tools:listitem="@layout/moovie_list_content" />

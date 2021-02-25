@@ -1,5 +1,6 @@
 package com.example.movieapp
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -8,7 +9,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.movieapp.model.Moovie
+import com.example.movieapp.bussinesIntel.Moovie_BI
+import com.example.movieapp.model.Moovie_DB
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_add_movie.*
@@ -36,42 +38,45 @@ class AddMovie : AppCompatActivity() {
             if (vlcName == "" || vlcAuthor == "" || vlcDescription == "" || vlcUrl == "") {
                 Toast.makeText(
                     this@AddMovie,
-                    "Some elements don't have been filled yet, please check!",
+                    R.string.msgEmptyFields,
                     Toast.LENGTH_LONG
                 ).show();
                 return@setOnClickListener
             }
 
-            val vloPeli = Moovie( tvMovieName.text.toString(), tvMovieAuthor.text.toString(),1, tvMovieDescription.text.toString(),tvMovieUrlPoster.text.toString())
-            //val obj = (callingActivity as MainActivity)
-//            obj.insertMoovies(
-//                Moovie_DB(
-//                    tvMovieName.text.toString(),
-//                    tvMovieAuthor.text.toString(),
-//                    1,
-//                    tvMovieDescription.text.toString(),
-//                    0,
-//                    tvMovieUrlPoster.text.toString()
-//                )
-//            )
+            MainActivity.mMovie.add(
+                    Moovie_DB(
+                        tvMovieName.text.toString(),
+                        tvMovieAuthor.text.toString(),
+                        1,
+                        tvMovieDescription.text.toString(),
+                        0,
+                        tvMovieUrlPoster.text.toString()
+                    )
+            )
 
+            val vloDD = Moovie_BI()
+            vloDD.insertMoovies(
+                    Moovie_DB(
+                        tvMovieName.text.toString(),
+                        tvMovieAuthor.text.toString(),
+                        1,
+                        tvMovieDescription.text.toString(),
+                        0,
+                        tvMovieUrlPoster.text.toString()
+                    )
+            )
 
-            //MainActivity.mMovie.add(vloPeli)
-//            var vloLogicAddPeli = Moovie_BI(applicationContext)
-//            vloLogicAddPeli.insertMovie(vloPeli)
-
-            Toast.makeText(this, "Moovie has been registered successfully", Toast.LENGTH_LONG)
-                .show();
+            Toast.makeText(this, R.string.msgMovieSaved, Toast.LENGTH_LONG)
+                .show()
             finish()
 
         }
 
-        //btnAddMoovie = findViewById(R.id.btnAddMovie) as Button
         tvMovieName = findViewById(R.id.txv_add_moovie_name) as EditText
         tvMovieAuthor = findViewById(R.id.txv_add_moovie_author) as EditText
         tvMovieDescription = findViewById(R.id.txv_add_moovie_description) as EditText
         tvMovieUrlPoster = findViewById(R.id.txv_add_UrlImagen) as EditText
     }
-
 
 }

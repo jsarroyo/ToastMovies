@@ -5,37 +5,60 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
+import com.example.movieapp.bussinesIntel.Moovie_BI
+import com.example.movieapp.model.Moovie_DB
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.activity_det.*
+import kotlinx.android.synthetic.main.activity_serie_detail.*
+import kotlinx.android.synthetic.main.fragment_serie_detail.*
 
 class DetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_serie_detail)
-        val nMoovieIndex = 0
-        //val nMoovieIndex = intent.getStringExtra("index")
+
+        val nMoovieIndex = intent.getIntExtra("index",0)
         val name = intent.getStringExtra("name")
         val author = intent.getStringExtra("author")
         val season = intent.getStringExtra("season")
         val description = intent.getStringExtra("description")
         val url = intent.getStringExtra("url")
 
-        val mBtnDelete = findViewById<FloatingActionButton>(R.id.btnDeleteMovie)
+        btn_delete_movie_adt.setOnClickListener {
 
-        mBtnDelete.setOnClickListener{
-            val builder = AlertDialog.Builder(this@DetailActivity)
-                    .setCancelable(false)
-                    .setPositiveButton("Yes") { dialog, id ->
-                        // Delete selected moovie from list
-                        MainActivity.mMovie.removeAt(nMoovieIndex)
-                    }
-                    .setNegativeButton("No") { dialog, id ->
-                        // Dismiss the dialog
-                        dialog.dismiss()
-                    }
+            val vloDD = Moovie_BI()
+            vloDD.deleteMoovies(
+                            MainActivity.mMovie[nMoovieIndex]
+
+            )
+
+            Toast.makeText(this,R.string.msgMovieDeleted, Toast.LENGTH_LONG).show();
+
         }
+        btn_delete_movie_fsd.setOnClickListener {
+            val vloDD = Moovie_BI()
+            vloDD.deleteMoovies(
+                    MainActivity.mMovie[nMoovieIndex]
+
+            )
+            Toast.makeText(this,R.string.msgMovieDeleted, Toast.LENGTH_LONG).show();
+
+        }
+        btn_delete_movie_asd    .setOnClickListener {
+            val vloDD = Moovie_BI()
+            vloDD.deleteMoovies(
+                    MainActivity.mMovie[nMoovieIndex]
+
+            )
+            Toast.makeText(this,R.string.msgMovieDeleted, Toast.LENGTH_LONG).show();
+
+        }
+
+
         val mName = findViewById<TextView>(R.id.nameTextView)
         val mAuthor = findViewById<TextView>(R.id.authorTextView)
         val mSeason = findViewById<TextView>(R.id.seasonTextView)

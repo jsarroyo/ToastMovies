@@ -27,7 +27,7 @@
             android:layout_toStartOf="@+id/imageView"
             android:text="@string/title_activity_main"
             android:textColor="@color/colorWhite"
-            android:textSize="34sp" />
+            android:textSize="@dimen/fontSizeTitle" />
 
         <TextView
             android:id="@+id/textView2"
@@ -40,7 +40,7 @@
             android:layout_marginBottom="24dp"
             android:text="@string/subtitle_add_moovie_activity_main"
             android:textColor="@color/colorText"
-            android:textSize="24sp" />
+            android:textSize="@dimen/fontSizeSubTitle" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -61,6 +61,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:textSize="@dimen/fontSizeTxtName"
         android:background="@color/design_default_color_surface"
         android:hint="@string/txt_moovie_name"
         android:textAlignment="center"
@@ -80,6 +81,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@color/design_default_color_surface"
+        android:textSize="@dimen/fontSizeTxtAuthor"
         android:hint="@string/txt_moovie_author"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -94,26 +96,29 @@
     <EditText
         android:id="@+id/txv_add_UrlImagen"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@color/design_default_color_surface"
         android:hint="@string/txt_movie_url_imagen"
         android:textAlignment="center"
         android:textColor="@color/black"
-
+        android:textSize="@dimen/fontSizeTxtAuthor"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/txv_add_moovie_author"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txv_add_moovie_author"
         app:layout_constraintTop_toBottomOf="@+id/txv_add_moovie_author"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.038"
+        android:maxLines="4"
+        android:lines="4"
+        />
 
     <EditText
         android:id="@+id/txv_add_moovie_description"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="120dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@color/design_default_color_surface"
@@ -121,11 +126,15 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="normal"
+        android:textSize="@dimen/fontSizeTxtUrlDescription"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/txv_add_UrlImagen"
         app:layout_constraintStart_toStartOf="@+id/txv_add_UrlImagen"
         app:layout_constraintTop_toBottomOf="@+id/txv_add_UrlImagen"
-        app:layout_constraintVertical_bias="0.054" />
+        app:layout_constraintVertical_bias="0.054"
+        android:maxLines="4"
+        android:lines="4"
+        />
 
 
     <Button
@@ -140,13 +149,14 @@
         android:text="@string/txt_add_moovie_text_button"
         android:textAlignment="center"
         android:textColor="#000000"
+        android:textSize="@dimen/fontSizeAddButton"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/txv_add_UrlImagen"
-        app:layout_constraintHorizontal_bias="0.972"
-        app:layout_constraintStart_toStartOf="@+id/txv_add_UrlImagen"
-        app:layout_constraintTop_toBottomOf="@+id/txv_add_UrlImagen"
-        app:layout_constraintVertical_bias="0.198" />
+        app:layout_constraintEnd_toEndOf="@+id/txv_add_moovie_description"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txv_add_moovie_description"
+        app:layout_constraintTop_toBottomOf="@+id/txv_add_moovie_description"
+        app:layout_constraintVertical_bias="0.034" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

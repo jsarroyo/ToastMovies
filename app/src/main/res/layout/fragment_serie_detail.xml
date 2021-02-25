@@ -16,7 +16,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/name"
         android:textColor="@color/colorWhite"
-        android:textSize="28sp"
+        android:textSize="@dimen/fontSizeLblName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/author"
+        android:textSize="@dimen/fontSizeLblAuthor"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
@@ -39,22 +40,29 @@
         android:layout_height="wrap_content"
         android:text="@string/season"
         android:layout_marginRight="20dp"
-        android:textSize="34sp"
+        android:textSize="@dimen/fontSizeLblName"
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTextView"
         android:layout_marginEnd="20dp" />
 
-    <TextView
-        android:id="@+id/TextView"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_delete_movie_fsd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/season_text"
-        android:layout_marginRight="8dp"
-        android:textColor="@color/colorText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seasonTextView"
-        android:layout_marginEnd="8dp" />
+
+        android:background="@color/colorWhite"
+        android:textColor="@color/black"
+
+
+        app:layout_constraintTop_toBottomOf="@+id/authorTextView"
+        app:layout_constraintEnd_toEndOf="@+id/authorTextView"
+        android:layout_marginTop="8dp"
+
+
+        android:contentDescription="@string/borrar_peli"
+        app:backgroundTint="@color/design_default_color_on_primary"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 
     <TextView
         android:id="@+id/descriptionTextView"
@@ -69,5 +77,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextView" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_delete_movie"
+        android:textSize="@dimen/fontSizeLblDescription"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
